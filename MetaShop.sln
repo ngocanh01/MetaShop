@@ -11,9 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MetaShop.DAL", "MetaShop.DA
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MetaShop.Common", "MetaShop.Common\MetaShop.Common.csproj", "{9866DB23-DA19-4F10-8968-0A2EBD741479}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetaShop.Business", "MetaShop.Business\MetaShop.Business.csproj", "{53C7F998-8B0D-4303-885E-84570B6539AF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MetaShop.Business", "MetaShop.Business\MetaShop.Business.csproj", "{53C7F998-8B0D-4303-885E-84570B6539AF}"
 EndProject
-Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "metashop.admin", "MetaShop.Admin\metashop.admin.esproj", "{368EB594-1CE8-4BF0-BF73-593583A2BD67}"
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "MetaShop.Admin", "MetaShop.Admin\MetaShop.Admin.esproj", "{368EB594-1CE8-4BF0-BF73-593583A2BD67}"
 EndProject
 Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "MetaShop.Admin.Angular", "MetaShop.Admin.Angular\MetaShop.Admin.Angular.esproj", "{17F1D956-CDBF-495E-9C4F-6E0C2B8E6B99}"
 EndProject
