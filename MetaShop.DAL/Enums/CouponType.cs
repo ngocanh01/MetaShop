@@ -5,22 +5,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MetaShop.DAL.Entities
+namespace MetaShop.DAL.Enums
 {
-    internal class EnumMethods
+    public class CouponType
     {
         public enum GetCouponType
         {
-            percent = 1,
+            Percent = 1,
 
             [Description("Fixed Amount")]
-            fixedAmount = 2
-        }
-        public enum GetCouponStatus
-        {
-            active = 1,
-            expired = 2,
-            disabled = 3
+            FixedAmount = 2
         }
     }
 }

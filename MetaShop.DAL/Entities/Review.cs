@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MetaShop.DAL.Entities
 {
-    internal class Review
+    public class Review
     {
         public int ProductId { get; set; }
         public int CustomerId { get; set; }
@@ -15,7 +15,7 @@ namespace MetaShop.DAL.Entities
         public string? Content { get; set; }
         public bool IsApproved { get; set; }
         public virtual Product Product { get; set; }
-        public virtual Cart Cart { get; set; }
+        public virtual Customer Customer { get; set; }
 
     }
 }

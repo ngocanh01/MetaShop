@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MetaShop.DAL.Entities
 {
-    internal class OrderItem : BaseEntity
+    public class OrderItem : BaseEntity
     {
         public int OrderId { get; set; }
         public int ProductId { get; set; }
@@ -16,6 +16,11 @@ namespace MetaShop.DAL.Entities
         public DateTime? DeletedDate { get; set; }
         public virtual Order Order { get; set; }
         public virtual Product Product { get; set; }
+        public virtual ICollection<Product> Products { get; set; }
+        public OrderItem()
+        {
+            Products = new List<Product>();
+        }
 
 
     }

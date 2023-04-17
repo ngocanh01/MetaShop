@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MetaShop.DAL.Entities
 {
-    internal class Customer : BaseEntity
+    public class Customer : BaseEntity
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
@@ -18,5 +18,12 @@ namespace MetaShop.DAL.Entities
         public string Country { get; set; }
         public string PostalCode { get; set; }
         public string PhoneNumber { get; set; }
+        public virtual ICollection<Affiliate> Affiliates { get; set; }
+        public virtual ICollection<Review> Reviews { get; set; }
+        public Customer()
+        {
+            Affiliates = new List<Affiliate>();
+            Reviews = new List<Review>();
+        }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MetaShop.DAL.Entities
 {
-    internal class Order
+    public class Order
     { 
         public int Id { get; set; }
         public int CustomerId { get; set; }
@@ -24,6 +24,13 @@ namespace MetaShop.DAL.Entities
         public virtual Coupon Coupon { get; set; }
         public virtual Product Product { get; set; }
         //public virtual Payment Payment { get; set; }
+        public virtual ICollection<Coupon> Coupons { get; set; }
+        public virtual ICollection<OrderItem> OrderItems { get; set; }
+        public Order()
+        {
+            Coupons = new List<Coupon>();
+            OrderItems = new List<OrderItem>();
+        }
 
     }
 }

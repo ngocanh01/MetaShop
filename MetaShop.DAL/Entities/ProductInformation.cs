@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MetaShop.DAL.Entities
 {
-    internal class ProductInformation
+    public class ProductInformation
     {
         public int Id { get; set; }
         public int ProductId { get; set; }
@@ -14,7 +14,7 @@ namespace MetaShop.DAL.Entities
         public int AttributeId { get; set; }
         public string? Value { get; set; }
         public virtual Product Product { get; set; }
-        public virtual Assets Assets { get; set; }
+        public virtual Asset Assets { get; set; }
         public virtual Attribute Attributes { get; set; }
 
     }

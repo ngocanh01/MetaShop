@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MetaShop.DAL.Entities
 {
-    internal class Category : BaseEntity
+    public class Category : BaseEntity
     {
         public string Name { get; set; }
         public string Slug { get; set; }
@@ -15,5 +15,10 @@ namespace MetaShop.DAL.Entities
         public string? Image { get; set; }
         public bool Status { get; set; }
         public DateTime? DeletedDate { get; set; }
+        public virtual ICollection<Product> Products { get; set; }
+        public Category()
+        {
+            Products = new List<Product>();
+        }
     }
 }

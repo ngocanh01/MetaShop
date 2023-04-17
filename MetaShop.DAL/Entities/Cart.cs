@@ -6,9 +6,14 @@ using System.Threading.Tasks;
 
 namespace MetaShop.DAL.Entities
 {
-    internal class Cart : BaseEntity
+    public class Cart : BaseEntity
     {
         public int CustomerId { get; set; }
         public virtual Customer Customer { get; set; }
+        public virtual ICollection<CartItem> CartItems { get; set; }
+        public Cart()
+        {
+            CartItems = new List<CartItem>();
+        }
     }
 }
