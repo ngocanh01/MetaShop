@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MetaShop.DAL.Entities
 {
-    internal class Attributes
+    internal class Attribute
     {
         public int Id { get; set; }
         public string Name { get; set; }
