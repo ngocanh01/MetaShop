@@ -17,6 +17,8 @@ Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "MetaShop.Admin", "MetaShop.
 EndProject
 Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "MetaShop.Admin.Angular", "MetaShop.Admin.Angular\MetaShop.Admin.Angular.esproj", "{17F1D956-CDBF-495E-9C4F-6E0C2B8E6B99}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetaShop.Identity", "MetaShop.Identity\MetaShop.Identity.csproj", "{4D76D70C-245A-4519-B127-D76975D7C96A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +57,10 @@ Global
 		{17F1D956-CDBF-495E-9C4F-6E0C2B8E6B99}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{17F1D956-CDBF-495E-9C4F-6E0C2B8E6B99}.Release|Any CPU.Build.0 = Release|Any CPU
 		{17F1D956-CDBF-495E-9C4F-6E0C2B8E6B99}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{4D76D70C-245A-4519-B127-D76975D7C96A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D76D70C-245A-4519-B127-D76975D7C96A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D76D70C-245A-4519-B127-D76975D7C96A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D76D70C-245A-4519-B127-D76975D7C96A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
