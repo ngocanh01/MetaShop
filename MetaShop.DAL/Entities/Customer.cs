@@ -20,10 +20,12 @@ namespace MetaShop.DAL.Entities
         public string PhoneNumber { get; set; }
         public virtual ICollection<Affiliate> Affiliates { get; set; }
         public virtual ICollection<Review> Reviews { get; set; }
+        public virtual ICollection<Order> Orders { get; set; }
         public Customer()
         {
             Affiliates = new List<Affiliate>();
             Reviews = new List<Review>();
+            Orders = new List<Order>();
         }
     }
 }

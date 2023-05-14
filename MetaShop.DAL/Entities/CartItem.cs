@@ -15,10 +15,6 @@ namespace MetaShop.DAL.Entities
         public virtual Cart Cart { get; set; }
         public virtual Product Product { get; set; }
         public virtual ICollection<Product> Products { get; set; }
-        public CartItem()
-        {
-            Products = new List<Product>();
-        }
 
     }
 }

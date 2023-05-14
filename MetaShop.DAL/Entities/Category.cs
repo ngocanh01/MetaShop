@@ -8,6 +8,10 @@ namespace MetaShop.DAL.Entities
 {
     public class Category : BaseEntity
     {
+        public Category()
+        {
+            Products = new List<Product>();
+        }
         public string Name { get; set; }
         public string Slug { get; set; }
         public int? ParentId { get; set; }
@@ -16,9 +20,6 @@ namespace MetaShop.DAL.Entities
         public bool Status { get; set; }
         public DateTime? DeletedDate { get; set; }
         public virtual ICollection<Product> Products { get; set; }
-        public Category()
-        {
-            Products = new List<Product>();
-        }
+        
     }
 }

@@ -16,6 +16,6 @@ namespace MetaShop.DAL.Entities
         public virtual Product Product { get; set; }
         public virtual Asset Assets { get; set; }
         public virtual Attribute Attributes { get; set; }
-
+        
     }
 }

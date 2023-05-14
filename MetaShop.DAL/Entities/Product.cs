@@ -8,6 +8,11 @@ namespace MetaShop.DAL.Entities
 {
     public class Product : BaseEntity
     {
+        public Product()
+        {
+            ProductAssets = new List<ProductAsset>();
+            Reviews = new List<Review>();
+        }
         public int CategoryId { get; set; }
         public string Name { get; set; }
         public string Slug { get; set; }
@@ -22,10 +27,6 @@ namespace MetaShop.DAL.Entities
         public virtual Category Category { get; set; }
         public virtual ICollection<ProductAsset> ProductAssets { get; set; }
         public virtual ICollection<Review> Reviews { get; set; }
-        public Product()
-        {
-            ProductAssets = new List<ProductAsset>();
-            Reviews = new List<Review>();
-        }
+        
     }
 }
