@@ -6,13 +6,10 @@ using System.Threading.Tasks;
 
 namespace MetaShop.DAL.Enums
 {
-    public class CouponStatus 
+    public enum CouponStatus 
     {
-        public enum GetCouponStatus
-        {
-            Active = 1,
-            Expired = 2,
-            Disabled = 3
-        }
+        Active = 1,
+        Expired = 2,
+        Disabled = 3
     }
 }

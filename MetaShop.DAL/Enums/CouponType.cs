@@ -7,14 +7,11 @@ using System.Threading.Tasks;
 
 namespace MetaShop.DAL.Enums
 {
-    public class CouponType
+    public enum CouponType
     {
-        public enum GetCouponType
-        {
-            Percent = 1,
+        Percent = 1,
 
-            [Description("Fixed Amount")]
-            FixedAmount = 2
-        }
+        [Description("Fixed Amount")]
+        FixedAmount = 2
     }
 }

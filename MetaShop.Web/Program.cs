@@ -1,12 +1,15 @@
 using MetaShop.Business;
 
+
+
 var builder = WebApplication.CreateBuilder(args);
+var configuration = builder.Configuration;
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
 //Register service from Business layer
-builder.Services.AddBusinessLayer();
+builder.Services.AddBusinessLayer(configuration);
 
 var app = builder.Build();
 

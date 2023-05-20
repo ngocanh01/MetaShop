@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MetaShop.DAL.Entities
 {
-    public class Asset
+    public class Asset : BaseEntity
     {
         public string FileName { get; set; }
         public string Path { get; set; }

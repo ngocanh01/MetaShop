@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MetaShop.DAL.Entities
 {
-    public class Review
+    public class Review : BaseEntity
     {
         public int ProductId { get; set; }
         public int CustomerId { get; set; }

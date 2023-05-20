@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace MetaShop.DAL.EntityConfigurations
 {
-    internal class CartItemEntityConfiguration : IEntityTypeConfiguration<CartItem>
+    internal class CartItemEntityConfiguration : BaseEntityTypeConfiguration<CartItem>
     {
-        public void Configure(EntityTypeBuilder<CartItem> builder)
+        public override void Configure(EntityTypeBuilder<CartItem> builder)
         {
             builder.ToTable("CartItem");
 

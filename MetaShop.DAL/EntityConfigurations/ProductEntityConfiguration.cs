@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace MetaShop.DAL.EntityConfigurations
 {
-    internal class ProductEntityConfiguration : IEntityTypeConfiguration<Product>
+    internal class ProductEntityConfiguration : BaseEntityTypeConfiguration<Product>
     {
-        public void Configure(EntityTypeBuilder<Product> builder)
+        public override void Configure(EntityTypeBuilder<Product> builder)
         {
             builder.ToTable("Product");
 

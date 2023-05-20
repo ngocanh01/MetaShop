@@ -27,7 +27,6 @@ namespace MetaShop.DAL.Entities
         public DateTime? DeliveryDate { get; set; }
         public virtual Customer Customer { get; set; }
         public virtual Coupon Coupon { get; set; }
-        public virtual Product Product { get; set; }
         public virtual ICollection<Coupon> Coupons { get; set; }
         public virtual ICollection<OrderItem> OrderItems { get; set; }
 

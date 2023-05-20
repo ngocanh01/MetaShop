@@ -1,18 +1,15 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using EntityAttribute = MetaShop.DAL.Entities.Attribute;
 
 namespace MetaShop.DAL.EntityConfigurations
 {
-    internal class AttributeEntityConfiguration : IEntityTypeConfiguration<Attribute>
+    internal class AttributeEntityConfiguration : IEntityTypeConfiguration<EntityAttribute>
     {
-        public void Configure(EntityTypeBuilder<Attribute> builder)
+        public void Configure(EntityTypeBuilder<EntityAttribute> builder)
         {
             builder.ToTable("Attribute");
+            builder.HasKey(x => x.Id);
         }
     }
 }

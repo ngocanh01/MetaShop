@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace MetaShop.DAL.EntityConfigurations
 {
-    internal class ReviewEntityConfiguration : IEntityTypeConfiguration<Review>
+    internal class ReviewEntityConfiguration : BaseEntityTypeConfiguration<Review>
     {
-        public void Configure(EntityTypeBuilder<Review> builder)
+        public override void Configure(EntityTypeBuilder<Review> builder)
         {
             builder.ToTable("Review");
 
