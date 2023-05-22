@@ -1,6 +1,9 @@
-﻿using MetaShop.DAL;
+﻿using MetaShop.Business.Interfaces;
+using MetaShop.Business.Services;
+using MetaShop.DAL;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using System.Reflection;
 
 namespace MetaShop.Business
 {
@@ -11,6 +14,8 @@ namespace MetaShop.Business
             //Register Services here
             //Scope, Transitent,Singleton
             services.AddDataAccessorLayer(configuration);
+            services.AddAutoMapper(Assembly.GetExecutingAssembly());
+            services.AddTransient<IAttributeService, AttributeService>();
         }
     }
 }
