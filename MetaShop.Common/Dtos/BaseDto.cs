@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MetaShop.Common.Dtos
 {
-    internal class BaseDto
+    public class BaseDto
     {
         public int Id { get; set; }
         public DateTime CreatedDate { get; set; }

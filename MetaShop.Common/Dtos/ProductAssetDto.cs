@@ -1,14 +1,15 @@
-﻿using System;
+﻿using MetaShop.DAL.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MetaShop.DAL.Entities
+namespace MetaShop.Common.Dtos
 {
-    public class ProductAsset
+    public class ProductAssetDto
     {
-        public ProductAsset()
+        public ProductAssetDto()
         {
             Assets = new List<Asset>();
         }
@@ -19,6 +20,5 @@ namespace MetaShop.DAL.Entities
         public virtual Product Product { get; set; }
         public virtual Asset Asset { get; set; }
         public virtual ICollection<Asset> Assets { get; set; }
-
     }
 }

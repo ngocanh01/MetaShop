@@ -1,14 +1,15 @@
-﻿using System;
+﻿using MetaShop.DAL.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MetaShop.DAL.Entities
+namespace MetaShop.Common.Dtos
 {
-    public class Cart : BaseEntity
+    public class CartDto : BaseDto
     {
-        public Cart()
+        public CartDto()
         {
             CartItems = new List<CartItem>();
         }

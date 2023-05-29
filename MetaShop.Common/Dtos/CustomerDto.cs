@@ -1,14 +1,15 @@
-﻿using System;
+﻿using MetaShop.DAL.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MetaShop.DAL.Entities
+namespace MetaShop.Common.Dtos
 {
-    public class Customer : BaseEntity
+    public class CustomerDto : BaseDto
     {
-        public Customer()
+        public CustomerDto()
         {
             Affiliates = new List<Affiliate>();
             Reviews = new List<Review>();
@@ -27,6 +28,5 @@ namespace MetaShop.DAL.Entities
         public virtual ICollection<Affiliate> Affiliates { get; set; }
         public virtual ICollection<Review> Reviews { get; set; }
         public virtual ICollection<Order> Orders { get; set; }
-        
     }
 }

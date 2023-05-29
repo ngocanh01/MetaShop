@@ -1,12 +1,13 @@
-﻿using System;
+﻿using MetaShop.DAL.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MetaShop.DAL.Entities
+namespace MetaShop.Common.Dtos
 {
-    public class Affiliate : BaseEntity
+    public class AffiliateDto : BaseDto
     {
         public int CustomerId { get; set; }
         public string Code { get; set; }

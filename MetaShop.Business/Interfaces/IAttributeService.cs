@@ -3,7 +3,7 @@ using MetaShop.Common.Dtos;
 
 namespace MetaShop.Business.Interfaces
 {
-    internal interface IAttributeService
+    public interface IAttributeService
     {
         Task<IEnumerable<AttributeDto>> GetAllAsync();
 
