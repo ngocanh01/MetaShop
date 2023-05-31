@@ -16,6 +16,6 @@ namespace MetaShop.Common.Dtos
         public string? Value { get; set; }
         public virtual Product Product { get; set; }
         public virtual Asset Assets { get; set; }
-        public virtual Attribute Attributes { get; set; }
+        public virtual DAL.Entities.Attribute Attributes { get; set; }
     }
 }
