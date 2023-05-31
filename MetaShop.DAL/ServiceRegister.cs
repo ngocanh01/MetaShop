@@ -1,7 +1,9 @@
 ﻿using MetaShop.DAL.DbContexts;
+using MetaShop.DAL.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using System.Reflection;
 
 namespace MetaShop.DAL
 {
