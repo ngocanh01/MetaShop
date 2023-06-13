@@ -11,9 +11,9 @@ using System.Threading.Tasks;
 
 namespace MetaShop.Business
 {
-    internal class AutoMapperProfile : AutoMapper.Profile
+    public class AutoMapperProfile : AutoMapper.Profile
     {
-        internal AutoMapperProfile()
+        public AutoMapperProfile()
         {
             FromDataAccessorLayer();
             FromPresentationLayer();
@@ -25,7 +25,19 @@ namespace MetaShop.Business
 
         private void FromDataAccessorLayer()
         {
-            CreateMap<MetaShop.DAL.Entities.Attribute, AttributeDto>();
+            CreateMap<Affiliate, AffiliateDto>();
+            CreateMap<Asset, AssetDto>();
+            CreateMap<DAL.Entities.Attribute, AttributeDto>();
+            CreateMap<CartItem, CartItemDto>();
+            CreateMap<Cart, CartDto>();
+            CreateMap<Category, CategoryDto>();
+            CreateMap<Coupon, CouponDto>();
+            CreateMap<Customer, CustomerDto>();
+            CreateMap<OrderItem, OrderItemDto>();
+            CreateMap<Order, OrderDto>();
+            CreateMap<ProductAsset, ProductAssetDto>();
+            CreateMap<ProductInformation, ProductInformationDto>();
+            CreateMap<Product, ProductDto>();
         }
     }
 }
