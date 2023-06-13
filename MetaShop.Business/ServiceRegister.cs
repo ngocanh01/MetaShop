@@ -12,7 +12,7 @@ namespace MetaShop.Business
         public static void AddBusinessLayer(this IServiceCollection services, IConfiguration configuration)
         {
             //Register Services here
-            //Scope, Transitent,Singleton
+            //Transient < Scope < Singleton
             services.AddDataAccessorLayer(configuration);
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
             services.AddTransient<IAttributeService, AttributeService>();

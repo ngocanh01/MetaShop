@@ -1,4 +1,7 @@
-﻿using MetaShop.Web.Models;
+﻿using MetaShop.Business.Interfaces;
+using MetaShop.Business.Services;
+using MetaShop.DAL.Entities;
+using MetaShop.Web.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -8,28 +11,24 @@ namespace MetaShop.Web.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private ICategoryService _categoryService;
+        private IProductService _productService;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, ICategoryService categoryService, IProductService productService)
         {
             _logger = logger;
+            _categoryService = categoryService;
+            _productService = productService;
         }
         [Route("~/")]
         [Route("")]
         [Route("index")]
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
+            ViewBag.categories = await _categoryService.GetAllAsync();
+            ViewBag.products = await _productService.GetAllAsync();
             return View();
         }
 
-        //public IActionResult Privacy()
-        //{
-        //    return View();
-        //}
-
-        //[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        //public IActionResult Error()
-        //{
-        //    return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        //}
     }
 }

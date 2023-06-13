@@ -5,11 +5,6 @@ using MetaShop.Common;
 using MetaShop.Common.Dtos;
 using MetaShop.DAL.Interfaces;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using CategoryEntity = MetaShop.DAL.Entities.Category;
 
 namespace MetaShop.Business.Services
@@ -18,7 +13,10 @@ namespace MetaShop.Business.Services
     {
         private readonly IBaseRepository<CategoryEntity> _baseRepository;
         private IMapper _mapper;
+        public CategoryService()
+        {
 
+        }
         public CategoryService(IBaseRepository<CategoryEntity> baseRepository, IMapper mapper)
         {
             _baseRepository = baseRepository;
@@ -39,7 +37,7 @@ namespace MetaShop.Business.Services
         public async Task<IEnumerable<CategoryDto>> GetAllAsync()
         {
             var categories = await _baseRepository.GetAllAsync();
-            return _mapper.Map<List<CategoryDto>>(categories);
+            return _mapper.Map<List<CategoryDto>>(categories).ToList();
         }
 
         public async Task<CategoryDto> GetByIdAsync(Guid id)
