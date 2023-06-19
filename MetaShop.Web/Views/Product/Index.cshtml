@@ -42,24 +42,17 @@
                     <div class="sidebar__item">
                         <h4>Department</h4>
                         <ul>
-                            @foreach (var item in Model.Categories)
                             {
                                 <li><a href="#">@item.Name</a></li>
                             }
                         </ul>
                     </div>
-                    <partial name="~/Views/Product/_PriceRange.cshtml" />
                     <partial name="~/Views/Shared/Components/_SlidebarLastestProducts.cshtml" />
                 </div>
             </div>
             <div class="col-lg-9 col-md-7">
-                <partial name="~/Views/Product/_ProductDiscount.cshtml" />
-                <partial name="~/Views/Product/_Filter.cshtml" />
-                
-                <div class="row">
-                    @foreach(var item in Model.Products){
+                    <div class="row">
                         <div class="col-lg-4 col-md-6 col-sm-6">
-                            <partial name="~/Views/Product/_ProductItem.cshtml" model="@item" />
                         </div>
                     }
                 </div>

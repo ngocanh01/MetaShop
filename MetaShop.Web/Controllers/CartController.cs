@@ -20,7 +20,7 @@ namespace MetaShop.Web.Controllers
         public async Task<IActionResult> Index()
         {
             var model = new CartViewModel
-            {
+        {
                 Categories = await _categoryService.GetAllAsync(),
                 Products = await _productService.GetAllAsync()
             };
