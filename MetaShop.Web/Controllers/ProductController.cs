@@ -1,4 +1,5 @@
 ﻿using MetaShop.Business.Interfaces;
+using MetaShop.Web.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MetaShop.Web.Controllers
@@ -18,9 +19,12 @@ namespace MetaShop.Web.Controllers
         [Route("index")]
         public async Task<IActionResult> Index()
         {
-            ViewBag.categories = await _categoryService.GetAllAsync();
-            ViewBag.products = await _productService.GetAllAsync();
-            return View();
+            var model = new ProductViewModel
+            {
+                Categories = await _categoryService.GetAllAsync(),
+                Products = await _productService.GetAllAsync()
+            };
+            return View(model);
         }
     }
 }

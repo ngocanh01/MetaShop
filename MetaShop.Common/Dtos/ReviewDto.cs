@@ -15,7 +15,7 @@ namespace MetaShop.Common.Dtos
         public string? Title { get; set; }
         public string? Content { get; set; }
         public bool IsApproved { get; set; }
-        public virtual Product Product { get; set; }
+        public virtual DAL.Entities.Product Product { get; set; }
         public virtual Customer Customer { get; set; }
     }
 }

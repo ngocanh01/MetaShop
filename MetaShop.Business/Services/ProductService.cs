@@ -2,7 +2,7 @@
 using MetaShop.Business.Extensions;
 using MetaShop.Business.Interfaces;
 using MetaShop.Common;
-using MetaShop.Common.Dtos;
+using MetaShop.Common.Dtos.Product;
 using MetaShop.DAL.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System;
