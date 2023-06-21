@@ -3,7 +3,7 @@ using MetaShop.Common.Dtos.Product;
 
 namespace MetaShop.Web.ViewModels
 {
-    public class HomeViewModel
+    public class ContactViewModel
     {
         public IEnumerable<CategoryDto> Categories { get; set; }
         public IEnumerable<ProductDto> Products { get; set; }
