@@ -4,7 +4,7 @@
         <span>All departments</span>
     </div>
     <ul>
-        @foreach (var item in ViewBag.categories)
+        @foreach (var item in Model.Categories)
         {
             <li><a href="#">@item.Name</a></li>
         }
