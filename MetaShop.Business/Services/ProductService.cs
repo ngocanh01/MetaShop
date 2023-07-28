@@ -5,11 +5,6 @@ using MetaShop.Common;
 using MetaShop.Common.Dtos.Product;
 using MetaShop.DAL.Interfaces;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using ProductEntity = MetaShop.DAL.Entities.Product;
 
 namespace MetaShop.Business.Services
@@ -55,13 +50,28 @@ namespace MetaShop.Business.Services
             return _mapper.Map<ProductDto>(product);
         }
 
-        public async Task<PagedResponseModel<ProductDto>> PagedQueryAsync(string name, int page, int limit)
+        public async Task<PagedResponseModel<ProductDto>> PagedSearchQueryAsync(string name, int page, int limit)
         {
             var query = _baseRepository.Entities;
 
             query = query.Where(x => string.IsNullOrEmpty(name) || x.Name.Trim().ToLower().Contains(name.Trim().ToLower()));
 
             query = query.OrderBy(x => x.Name);
+
+            var products = await query.AsNoTracking().PaginateAsync(page, limit);
+
+            return new PagedResponseModel<ProductDto>
+            {
+                CurrentPage = products.CurrentPage,
+                TotalPages = products.TotalPages,
+                TotalItems = products.TotalItems,
+                Items = _mapper.Map<IEnumerable<ProductDto>>(products.Items)
+            };
+        }
+
+        public async Task<PagedResponseModel<ProductDto>> PagedQueryAsync(int page, int limit)
+        {
+            var query = _baseRepository.Entities;
 
             var products = await query.AsNoTracking().PaginateAsync(page, limit);
 

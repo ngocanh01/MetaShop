@@ -1,4 +1,5 @@
 ﻿using MetaShop.Business.Interfaces;
+using MetaShop.Common.Dtos.Product;
 using MetaShop.Web.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
@@ -19,10 +20,12 @@ namespace MetaShop.Web.Controllers
         [Route("index")]
         public async Task<IActionResult> Index()
         {
+            var listProduct = await _productService.PagedQueryAsync(1, 10);
             var model = new ProductViewModel
             {
                 Categories = await _categoryService.GetAllAsync(),
-                Products = await _productService.GetAllAsync()
+                Products = await _productService.GetAllAsync(),
+                Paged = await _productService.PagedQueryAsync(1, 9)
             };
             return View(model);
         }
