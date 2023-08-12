@@ -1,0 +1,20 @@
+﻿@using MetaShop.Common
+@model PagedResponseModel<ProductDto>
+<div class="col-lg-9 col-md-7" id="ProductsPagination">
+    <div class="row">
+        @foreach (var item in Model.Items)
+        {
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <partial name="~/Views/Shared/Components/_ProductItem.cshtml" model="@item" />
+            </div>
+        }
+    </div>
+
+    <div id="my_select" class="product__pagination">
+        @for (var item = 1; item < Model.TotalPages; item++)
+        {
+            var isCurrentPage = Model.CurrentPage == item ? "color:green;" : "";
+            <button id="@item" onclick="pagination(this.id)" style="@isCurrentPage">@item</button>
+        }
+    </div>
+</div>

@@ -1,5 +1,5 @@
 ﻿using MetaShop.Business.Interfaces;
-using MetaShop.Common.Dtos.Product;
+using PagedList;
 using MetaShop.Web.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
@@ -29,5 +29,12 @@ namespace MetaShop.Web.Controllers
             };
             return View(model);
         }
+        [Route("pagination")]
+        public async Task<IActionResult> Pagination(int page)
+        {
+            var model = await _productService.PagedQueryAsync(page, 9);
+            return PartialView("_ProductsPagination", model);
+        }
+
     }
 }

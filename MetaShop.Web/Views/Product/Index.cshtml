@@ -1,4 +1,5 @@
-﻿@{
+﻿@model ProductViewModel
+@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <!-- Hero Section Begin -->
@@ -41,22 +42,9 @@
                     <partial name="~/Views/Shared/Components/_SlidebarLastestProducts.cshtml" />
                 </div>
             </div>
-            <div class="col-lg-9 col-md-7">
-                <div class="row">
-                    @foreach (var item in Model.Paged.Items)
-                    {
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <partial name="~/Views/Shared/Components/_ProductItem.cshtml" model="@item" />   
-                    </div>
-                    }
-                </div>
-                <div class="product__pagination">
-                    @for (var item = 1; item < Model.Paged.TotalPages; item++)
-                    {
-                        <a href="@item">@item</a>
-                    }
-                </div>
-            </div>
+            
+                <partial name="~/Views/Product/_ProductsPagination.cshtml" model="@Model.Paged" />
+        
         </div>
     </div>
 </section>
