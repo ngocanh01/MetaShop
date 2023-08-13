@@ -1,0 +1,13 @@
+﻿@model ProductDto
+<div class="product__discount__item">
+    <div class="product__discount__item__pic set-bg">
+        <img src="~/img/product/discount/pd-1.jpg" />
+        <div class="product__discount__percent">-20%</div>
+        <partial name="~/Views/Shared/Components/_IconHover.cshtml" />
+    </div>
+    <div class="product__discount__item__text">
+        <span>@Model.Name</span>
+        <h5><a href="#">Raisin’n’nuts</a></h5>
+        <div class="product__item__price">@Model.Price<span>$36.00</span></div>
+    </div>
+</div>

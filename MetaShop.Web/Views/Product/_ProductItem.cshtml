@@ -1,0 +1,11 @@
+﻿@model ProductDto
+<div class="product__item">
+    <div class="product__item__pic set-bg" >
+        <img src="~/img/product/product-2.jpg" />
+        <partial name="~/Views/Shared/Components/_IconHover.cshtml" />
+    </div>
+    <div class="product__item__text">
+        <h6><a href="#">@Model.Name</a></h6>
+        <h5>@Model.Price</h5>
+    </div>
+</div>

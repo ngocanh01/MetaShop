@@ -1,4 +1,5 @@
 ﻿using MetaShop.Common.Dtos;
+using MetaShop.Common.Dtos.Product;
 using MetaShop.DAL.Entities;
 using System;
 using System.Collections.Generic;
@@ -37,7 +38,7 @@ namespace MetaShop.Business
             CreateMap<Order, OrderDto>();
             CreateMap<ProductAsset, ProductAssetDto>();
             CreateMap<ProductInformation, ProductInformationDto>();
-            CreateMap<Product, ProductDto>();
+            CreateMap<DAL.Entities.Product, ProductDto>();
         }
     }
 }

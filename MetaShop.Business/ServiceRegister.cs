@@ -9,6 +9,7 @@ namespace MetaShop.Business
 {
     public static class ServiceRegister
     {
+        // this 
         public static void AddBusinessLayer(this IServiceCollection services, IConfiguration configuration)
         {
             //Register Services here

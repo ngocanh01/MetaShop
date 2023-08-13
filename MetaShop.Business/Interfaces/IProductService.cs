@@ -1,10 +1,5 @@
-﻿using MetaShop.Common.Dtos;
-using MetaShop.Common;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MetaShop.Common;
+using MetaShop.Common.Dtos.Product;
 
 namespace MetaShop.Business.Interfaces
 {
@@ -12,7 +7,9 @@ namespace MetaShop.Business.Interfaces
     {
         Task<IEnumerable<ProductDto>> GetAllAsync();
 
-        Task<PagedResponseModel<ProductDto>> PagedQueryAsync(string name, int page, int limit);
+        Task<PagedResponseModel<ProductDto>> PagedSearchQueryAsync(string name, int page, int limit);
+
+        Task<PagedResponseModel<ProductDto>> PagedQueryAsync(int page, int limit);
 
         Task<ProductDto> GetByIdAsync(Guid id);
 

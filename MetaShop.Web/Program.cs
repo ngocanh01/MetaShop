@@ -6,6 +6,8 @@ var configuration = builder.Configuration;
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+var service = builder.Services;
+
 //Register service from Business layer
 builder.Services.AddBusinessLayer(configuration);
 
