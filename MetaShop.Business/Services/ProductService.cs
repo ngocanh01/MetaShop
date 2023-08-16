@@ -50,7 +50,7 @@ namespace MetaShop.Business.Services
             return _mapper.Map<ProductDto>(product);
         }
 
-        public async Task<PagedResponseModel<ProductDto>> PagedSearchQueryAsync(string name, int page, int limit)
+        public async Task<PagedResponseModel<ProductDto>> PagedSearchQueryAsyncByName(string name, int page, int limit)
         {
             var query = _baseRepository.Entities;
 

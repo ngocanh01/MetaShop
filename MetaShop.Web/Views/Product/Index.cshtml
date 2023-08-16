@@ -2,7 +2,7 @@
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<!-- Hero Section Begin -->
+ 
 <section class="hero hero-normal">
     <div class="container">
         <div class="row">
@@ -15,8 +15,6 @@
         </div>
     </div>
 </section>
-<!-- Hero Section End -->
-<!-- Breadcrumb Section Begin -->
 <section class="breadcrumb-section set-bg other-page">
     <div class="container">
         <div class="row">
@@ -32,8 +30,6 @@
         </div>
     </div>
 </section>
-<!-- Breadcrumb Section End -->
-<!-- Product Section Begin -->
 <section class="product spad">
     <div class="container">
         <div class="row">
@@ -42,10 +38,7 @@
                     <partial name="~/Views/Shared/Components/_SlidebarLastestProducts.cshtml" />
                 </div>
             </div>
-            
-                <partial name="~/Views/Product/_ProductsPagination.cshtml" model="@Model.Paged" />
-        
+            <partial name="~/Views/Product/_ProductsPagination.cshtml" model="@Model.Paged" />
         </div>
     </div>
 </section>
-<!-- Product Section End -->

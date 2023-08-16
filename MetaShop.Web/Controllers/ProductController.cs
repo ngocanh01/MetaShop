@@ -1,5 +1,4 @@
 ﻿using MetaShop.Business.Interfaces;
-using PagedList;
 using MetaShop.Web.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
@@ -20,7 +19,6 @@ namespace MetaShop.Web.Controllers
         [Route("index")]
         public async Task<IActionResult> Index()
         {
-            var listProduct = await _productService.PagedQueryAsync(1, 10);
             var model = new ProductViewModel
             {
                 Categories = await _categoryService.GetAllAsync(),
@@ -34,6 +32,31 @@ namespace MetaShop.Web.Controllers
         {
             var model = await _productService.PagedQueryAsync(page, 9);
             return PartialView("_ProductsPagination", model);
+        }
+        [Route("searchProductsByName")]
+        public async Task<IActionResult> searchProductsByName(string keyword)
+        {
+            //var model = await _productService.PagedSearchQueryAsyncByName(keyword, 1, 4);
+            //return PartialView("_ProductsPagination", model);
+            var model = new ProductViewModel
+            {
+                Categories = await _categoryService.GetAllAsync(),
+                Products = await _productService.GetAllAsync(),
+                Paged = await _productService.PagedSearchQueryAsyncByName(keyword, 1, 4)
+            };
+            return View("Index", model);
+        }
+        [Route("searchByKeyword")]
+        public async Task<IActionResult> searchByKeyword(string keyword, int page)
+        {
+            var model = await _productService.PagedSearchQueryAsyncByName(keyword, page, 4);
+           // return Json(model);
+            return PartialView("_ProductsPagination", model);
+        }
+        [Route("details")]
+        public async Task<IActionResult> Details(int page)
+        {
+            return View("ProductDetails");
         }
 
     }

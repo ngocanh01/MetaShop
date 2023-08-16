@@ -7,7 +7,7 @@ namespace MetaShop.Business.Interfaces
     {
         Task<IEnumerable<ProductDto>> GetAllAsync();
 
-        Task<PagedResponseModel<ProductDto>> PagedSearchQueryAsync(string name, int page, int limit);
+        Task<PagedResponseModel<ProductDto>> PagedSearchQueryAsyncByName(string name, int page, int limit);
 
         Task<PagedResponseModel<ProductDto>> PagedQueryAsync(int page, int limit);
 

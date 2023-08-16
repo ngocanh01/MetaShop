@@ -1,5 +1,6 @@
 ﻿@using MetaShop.Common
 @model PagedResponseModel<ProductDto>
+
 <div class="col-lg-9 col-md-7" id="ProductsPagination">
     <div class="row">
         @foreach (var item in Model.Items)
@@ -9,12 +10,11 @@
             </div>
         }
     </div>
-
-    <div id="my_select" class="product__pagination">
+    <div class="product__pagination">
         @for (var item = 1; item < Model.TotalPages; item++)
         {
-            var isCurrentPage = Model.CurrentPage == item ? "color:green;" : "";
-            <button id="@item" onclick="pagination(this.id)" style="@isCurrentPage">@item</button>
+            var isCurrentPage = Model.CurrentPage == item ? "background: #7fad39; border-color: #7fad39; color: white" : "";
+            <a id="@item" onclick="pagination(this.id)" style="@isCurrentPage">@item</a>
         }
     </div>
 </div>
