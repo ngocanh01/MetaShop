@@ -1,12 +1,7 @@
 ﻿using MetaShop.DAL.DbContexts;
 using MetaShop.DAL.Interfaces;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MetaShop.DAL
 {
@@ -44,9 +39,9 @@ namespace MetaShop.DAL
         {
             IQueryable<T> query = _db.Set<T>();
 
-            if(includeProperties != null)
+            if (includeProperties != null)
             {
-                foreach(var includeProperty in includeProperties.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries)) 
+                foreach (var includeProperty in includeProperties.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
                 {
                     query = query.Include(includeProperty);
                 }
@@ -56,8 +51,7 @@ namespace MetaShop.DAL
 
         public async Task<T> GetByIdAsync(object id)
         {
-            return await _db.Set<T>()
-                .FindAsync(id);
+            return await _db.Set<T>().FindAsync(id);
         }
 
         public async Task<IEnumerable<T>> GetListByAsync(Expression<Func<T, bool>>? filter = null, string includeProperties = "")

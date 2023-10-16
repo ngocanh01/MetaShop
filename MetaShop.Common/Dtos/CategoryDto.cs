@@ -1,11 +1,4 @@
-﻿using MetaShop.DAL.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MetaShop.Common.Dtos
+﻿namespace MetaShop.Common.Dtos
 {
     public class CategoryDto : BaseDto
     {

@@ -15,6 +15,7 @@ namespace MetaShop.Web.Controllers
             _categoryService = categoryService;
             _productService = productService;
         }
+
         [Route("")]
         [Route("index")]
         public async Task<IActionResult> Index()
@@ -27,17 +28,17 @@ namespace MetaShop.Web.Controllers
             };
             return View(model);
         }
+
         [Route("pagination")]
         public async Task<IActionResult> Pagination(int page)
         {
             var model = await _productService.PagedQueryAsync(page, 9);
             return PartialView("_ProductsPagination", model);
         }
+
         [Route("searchProductsByName")]
         public async Task<IActionResult> searchProductsByName(string keyword)
         {
-            //var model = await _productService.PagedSearchQueryAsyncByName(keyword, 1, 4);
-            //return PartialView("_ProductsPagination", model);
             var model = new ProductViewModel
             {
                 Categories = await _categoryService.GetAllAsync(),
@@ -46,17 +47,19 @@ namespace MetaShop.Web.Controllers
             };
             return View("Index", model);
         }
+
         [Route("searchByKeyword")]
         public async Task<IActionResult> searchByKeyword(string keyword, int page)
         {
-            var model = await _productService.PagedSearchQueryAsyncByName(keyword, page, 4);
-           // return Json(model);
+            var model = await _productService.PagedSearchQueryAsyncByName(keyword, page, 9);
             return PartialView("_ProductsPagination", model);
         }
+
         [Route("details")]
-        public async Task<IActionResult> Details(int page)
+        public async Task<IActionResult> Details(int id)
         {
-            return View("ProductDetails");
+            var product = await _productService.GetByIdAsync(id);
+            return View("ProductDetails", product);
         }
 
     }

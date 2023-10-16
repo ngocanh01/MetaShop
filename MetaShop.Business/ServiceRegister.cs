@@ -9,11 +9,9 @@ namespace MetaShop.Business
 {
     public static class ServiceRegister
     {
-        // this 
         public static void AddBusinessLayer(this IServiceCollection services, IConfiguration configuration)
         {
             //Register Services here
-            //Transient < Scope < Singleton
             services.AddDataAccessorLayer(configuration);
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
             services.AddTransient<IAttributeService, AttributeService>();

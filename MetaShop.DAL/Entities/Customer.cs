@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MetaShop.DAL.Entities
+﻿namespace MetaShop.DAL.Entities
 {
     public class Customer : BaseEntity
     {
@@ -27,6 +21,6 @@ namespace MetaShop.DAL.Entities
         public virtual ICollection<Affiliate> Affiliates { get; set; }
         public virtual ICollection<Review> Reviews { get; set; }
         public virtual ICollection<Order> Orders { get; set; }
-        
+
     }
 }

@@ -5,11 +5,6 @@ using MetaShop.Common;
 using MetaShop.Common.Dtos;
 using MetaShop.DAL.Interfaces;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using CustomerEntity = MetaShop.DAL.Entities.Customer;
 
 namespace MetaShop.Business.Services
@@ -24,6 +19,7 @@ namespace MetaShop.Business.Services
             _baseRepository = baseRepository;
             _mapper = mapper;
         }
+
         public async Task<CustomerDto> AddAsync(CustomerDto customerDto)
         {
             var customer = _mapper.Map<CustomerEntity>(customerDto);
@@ -57,9 +53,7 @@ namespace MetaShop.Business.Services
         public async Task<PagedResponseModel<CustomerDto>> PagedQueryAsync(string name, int page, int limit)
         {
             var query = _baseRepository.Entities;
-
             query = query.Where(x => string.IsNullOrEmpty(name) || x.FirstName.Trim().ToLower().Contains(name.Trim().ToLower()));
-
             query = query.OrderBy(x => x.FirstName);
 
             var customers = await query.AsNoTracking().PaginateAsync(page, limit);

@@ -1,4 +1,4 @@
-﻿@model CartViewModel
+﻿@model ProductCartInfoDtos
 
 <table>
 	<thead>
@@ -14,23 +14,23 @@
 		<tr>
 			<td class="shoping__cart__item">
 				<img src="~/img/cart/cart-1.jpg" alt="">
-				<h5>@Model.Product.Name</h5>
+				<h5>@Model.Name</h5>
 			</td>
 			<td class="shoping__cart__price">
-				@Model.Product.Price
+				@Model.Price
 			</td>
 			<td class="shoping__cart__quantity">
 				<div class="quantity">
 					<div class="pro-qty">
-						<input type="text" value="@Model.Product.Quantity">
+						<input type="text" value="@Model.Quantity">
 					</div>
 				</div>
 			</td>
-			<td class="shoping__cart__total"> @Model.Product.Total </td>
+			<td class="shoping__cart__total"> @Model.Total </td>
 			<td class="shoping__cart__item__close">
 				X
 			</td>
 		</tr>
-
+		
 	</tbody>
 </table>

@@ -5,11 +5,6 @@ using MetaShop.Common;
 using MetaShop.Common.Dtos;
 using MetaShop.DAL.Interfaces;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using AssetEnitty = MetaShop.DAL.Entities.Asset;
 
 namespace MetaShop.Business.Services
@@ -24,6 +19,7 @@ namespace MetaShop.Business.Services
             _baseRepository = baseRepository;
             _mapper = mapper;
         }
+
         public async Task<AssetDto> AddAsync(AssetDto assetDto)
         {
             var asset = _mapper.Map<AssetEnitty>(assetDto);
@@ -59,7 +55,9 @@ namespace MetaShop.Business.Services
             var query = _baseRepository.Entities;
             query = query.Where(x => string.IsNullOrEmpty(filename) || x.FileName.Trim().ToLower().Contains(filename.Trim().ToLower()));
             query = query.OrderBy(x => x.FileName);
+
             var assets = await query.AsNoTracking().PaginateAsync(page, limit);
+
             return new PagedResponseModel<AssetDto>
             {
                 CurrentPage = assets.CurrentPage,

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MetaShop.DAL.Entities
+﻿namespace MetaShop.DAL.Entities
 {
     public class Affiliate : BaseEntity
     {

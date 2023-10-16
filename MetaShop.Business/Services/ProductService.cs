@@ -38,7 +38,7 @@ namespace MetaShop.Business.Services
             return _mapper.Map<List<ProductDto>>(products);
         }
 
-        public async Task<ProductDto> GetByIdAsync(Guid id)
+        public async Task<ProductDto> GetByIdAsync(int id)
         {
             var product = await _baseRepository.GetByIdAsync(id);
             return _mapper.Map<ProductDto>(product);

@@ -11,7 +11,7 @@ namespace MetaShop.Business.Interfaces
 
         Task<PagedResponseModel<ProductDto>> PagedQueryAsync(int page, int limit);
 
-        Task<ProductDto> GetByIdAsync(Guid id);
+        Task<ProductDto> GetByIdAsync(int id);
 
         Task<ProductDto> GetByNameAsync(string name);
 
