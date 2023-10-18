@@ -42,9 +42,8 @@
             </div>
             <div class="col-lg-6 col-md-6">
                 <div class="product__details__text">
-                                        
                     <form asp-controller="cart" asp-action="addToCart" method="post">
-                        <h3><input type="text" value="@Model.Name" name="Name" readonly></h3>
+                        <h3><input type="text" value="@Model.Name" name="Name" style="border:none" readonly></h3>
                         <div class="product__details__rating">
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
@@ -53,17 +52,18 @@
                             <i class="fa fa-star-half-o"></i>
                             <span>(18 reviews)</span>
                         </div>
-                        <div class="product__details__price"><input type="text" value="@Model.Price" name="Price" readonly></div>
+                        <div class="product__details__price">
+                            <input type="text" value="@Model.Price" name="Price" style="border:none; font-size: 25px;" readonly>
+                        </div>
                         <div class="product__details__quantity">
                             <div class="quantity">
                                 <div class="pro-qty">
-                                    <input type="text" value="1" min="1" max="@Model.Quantity" name="Quantity">
+                                    <input type="text" value="1" min="1" max="@Model.Quantity" name="Quantity" >
                                 </div>
                             </div>
                         </div>
-                        <input type="submit" name="add" />
+                        <input type="submit" class="primary-btn" value="ADD TO CARD" style="border:none"/>
                         <input type="hidden" value="@Model.Id" name="Id" />
-                        <a asp-controller="contact" asp-action="addToCart" class="primary-btn">ADD TO CARD</a>
                     </form>
                     
                     <a href="#" class="heart-icon"><span class="icon_heart_alt"></span></a>

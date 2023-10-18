@@ -11,26 +11,27 @@
 		</tr>
 	</thead>
 	<tbody>
-		<tr>
-			<td class="shoping__cart__item">
-				<img src="~/img/cart/cart-1.jpg" alt="">
-				<h5>@Model.Product.Name</h5>
-			</td>
-			<td class="shoping__cart__price">
-				@Model.Product.Price
-			</td>
-			<td class="shoping__cart__quantity">
-				<div class="quantity">
-					<div class="pro-qty">
-						<input type="text" value="@Model.Product.Quantity">
+		@foreach (var item in Model.ProductsCart) {
+			<tr>
+				<td class="shoping__cart__item">
+					<img src="~/img/cart/cart-1.jpg" alt="">
+					<h5>@item.Name</h5>
+				</td>
+				<td class="shoping__cart__price">
+					@item.Price
+				</td>
+				<td class="shoping__cart__quantity">
+					<div class="quantity">
+						<div class="pro-qty">
+							<input type="text" value="@item.Quantity">
+						</div>
 					</div>
-				</div>
-			</td>
-			<td class="shoping__cart__total"> @Model.Product.Total </td>
-			<td class="shoping__cart__item__close">
-				X
-			</td>
-		</tr>
-
+				</td>
+				<td class="shoping__cart__total"> @item.Total </td>
+				<td class="shoping__cart__item__close">
+					X
+				</td>
+			</tr>
+		}
 	</tbody>
 </table>

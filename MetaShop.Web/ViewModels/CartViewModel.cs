@@ -7,6 +7,6 @@ namespace MetaShop.Web.ViewModels
     {
         public IEnumerable<CategoryDto> Categories { get; set; }
         public IEnumerable<ProductDto> Products { get; set; }
-        public ProductCartInfoDtos Product { get; set; }
+        public List<ProductCartInfoDtos> ProductsCart { get; set; }
     }
 }
