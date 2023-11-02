@@ -26,6 +26,7 @@ namespace MetaShop.Web.Controllers
 			{
 				products = JsonConvert.DeserializeObject<List<ProductCartInfoDtos>>(HttpContext.Session.GetString("myCart"));
 			} 
+
 			var model = new CartViewModel
 			{
 				Categories = await _categoryService.GetAllAsync(),
@@ -54,7 +55,6 @@ namespace MetaShop.Web.Controllers
 					product.Total += productItem.Total;
 					products.Remove(productItem);
 				}
-
 			}
 
 			products.Add(product);
