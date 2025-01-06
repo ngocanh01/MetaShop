@@ -1,8 +1,9 @@
-﻿@model ProductViewModel
+@model ProductViewModel
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
- 
+
+<!-- Hero Section Begin -->
 <section class="hero hero-normal">
     <div class="container">
         <div class="row">
@@ -39,6 +40,7 @@
                 </div>
             </div>
             <partial name="~/Views/Product/_ProductsPagination.cshtml" model="@Model.Paged" />
+
         </div>
     </div>
 </section>

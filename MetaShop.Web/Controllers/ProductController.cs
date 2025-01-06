@@ -1,4 +1,4 @@
-﻿using MetaShop.Business.Interfaces;
+using MetaShop.Business.Interfaces;
 using MetaShop.Web.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 

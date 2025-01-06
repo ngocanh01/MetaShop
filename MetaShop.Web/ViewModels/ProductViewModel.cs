@@ -1,4 +1,4 @@
-﻿using MetaShop.Common;
+using MetaShop.Common;
 using MetaShop.Common.Dtos;
 using MetaShop.Common.Dtos.Product;
 

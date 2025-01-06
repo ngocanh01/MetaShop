@@ -30,7 +30,7 @@ namespace MetaShop.Business
             CreateMap<Order, OrderDto>();
             CreateMap<ProductAsset, ProductAssetDto>();
             CreateMap<ProductInformation, ProductInformationDto>();
-            CreateMap<Product, ProductDto>();
+            CreateMap<DAL.Entities.Product, ProductDto>();
         }
     }
 }

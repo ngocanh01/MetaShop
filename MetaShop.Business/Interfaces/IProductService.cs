@@ -1,10 +1,11 @@
-﻿using MetaShop.Common;
+using MetaShop.Common;
 using MetaShop.Common.Dtos.Product;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MetaShop.Common.Dtos.Product;
 
 namespace MetaShop.Business.Interfaces
 {

@@ -1,4 +1,5 @@
-﻿namespace MetaShop.Common.Dtos.Product
+namespace MetaShop.Common.Dtos.Product
+
 {
     public class ProductViewInfoDto
     {
