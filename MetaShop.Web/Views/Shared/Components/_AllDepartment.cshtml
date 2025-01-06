@@ -1,10 +1,11 @@
-﻿<div class="hero__categories">
+﻿@model HomeViewModel
+<div class="hero__categories">
     <div class="hero__categories__all">
         <i class="fa fa-bars"></i>
         <span>All departments</span>
     </div>
     <ul>
-        @foreach (var item in ViewBag.categories)
+        @foreach (var item in Model.Categories)
         {
             <li><a href="#">@item.Name</a></li>
         }
