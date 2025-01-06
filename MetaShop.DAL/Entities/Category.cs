@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MetaShop.DAL.Entities
+﻿namespace MetaShop.DAL.Entities
 {
     public class Category : BaseEntity
     {
@@ -20,6 +14,6 @@ namespace MetaShop.DAL.Entities
         public bool Status { get; set; }
         public DateTime? DeletedDate { get; set; }
         public virtual ICollection<Product> Products { get; set; }
-        
+
     }
 }

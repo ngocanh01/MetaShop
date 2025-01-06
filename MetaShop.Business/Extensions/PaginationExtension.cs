@@ -25,7 +25,7 @@ namespace MetaShop.Business.Extensions
                             .Take(limit)
                             .ToListAsync();
             paged.TotalItems = await query.CountAsync();
-            paged.TotalPages = (int)Math.Ceiling(paged.TotalItems / (double)limit);
+            paged.TotalPages = (int)Math.Ceiling(paged.TotalItems / (double)limit) + 1;
 
             return paged;
         }

@@ -13,15 +13,13 @@ namespace MetaShop.Business.Services
     {
         private readonly IBaseRepository<CategoryEntity> _baseRepository;
         private IMapper _mapper;
-        public CategoryService()
-        {
 
-        }
         public CategoryService(IBaseRepository<CategoryEntity> baseRepository, IMapper mapper)
         {
             _baseRepository = baseRepository;
             _mapper = mapper;
         }
+
         public async Task<CategoryDto> AddAsync(CategoryDto categoryDto)
         {
             var attribute = _mapper.Map<CategoryEntity>(categoryDto);
@@ -55,9 +53,7 @@ namespace MetaShop.Business.Services
         public async Task<PagedResponseModel<CategoryDto>> PagedQueryAsync(string name, int page, int limit)
         {
             var query = _baseRepository.Entities;
-
             query = query.Where(x => string.IsNullOrEmpty(name) || x.Name.Trim().ToLower().Contains(name.Trim().ToLower()));
-
             query = query.OrderBy(x => x.Name);
 
             var categories = await query.AsNoTracking().PaginateAsync(page, limit);

@@ -1,10 +1,4 @@
 ﻿using MetaShop.DAL.Enums;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MetaShop.DAL.Entities
 {
@@ -22,5 +16,5 @@ namespace MetaShop.DAL.Entities
         public CouponStatus CouponStatus { get; set; }
         public DateTime? DeletedDate { get; set; }
     }
-    
+
 }

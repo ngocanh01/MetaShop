@@ -5,11 +5,6 @@ using MetaShop.Common;
 using MetaShop.Common.Dtos;
 using MetaShop.DAL.Interfaces;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using AffiliateEntity = MetaShop.DAL.Entities.Affiliate;
 
 namespace MetaShop.Business.Services
@@ -62,7 +57,7 @@ namespace MetaShop.Business.Services
             query = query.Where(x => string.IsNullOrEmpty(code) || x.Code.Trim().ToLower().Contains(code.Trim().ToLower()));
 
             query = query.OrderBy(x => x.Code);
-            
+
             var affiliates = await query.AsNoTracking().PaginateAsync(page, limit);
 
             return new PagedResponseModel<AffiliateDto>

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MetaShop.Common
+﻿namespace MetaShop.Common
 {
     public class PagedModel<TModel>
     {
@@ -24,6 +18,6 @@ namespace MetaShop.Common
         public int TotalItems { get; set; }
         public int TotalPages { get; set; }
         public IList<TModel> Items { get; set; }
-        
+
     }
 }

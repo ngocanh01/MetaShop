@@ -2,7 +2,6 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<!-- Hero Section Begin -->
 <section class="hero">
     <div class="container">
         <div class="row">
@@ -23,8 +22,6 @@
         </div>
     </div>
 </section>
-<!-- Hero Section End -->
-<!-- Categories Section Begin -->
 <section class="categories">
     <div class="container">
         <div class="row">
@@ -32,29 +29,23 @@
         </div>
     </div>
 </section>
-<!-- Categories Section End -->
-<!-- Featured Section Begin -->
 <partial name="~/Views/Home/Product/_FeaturedProduct.cshtml" model="@Model.Products" />
-<!-- Featured Section End -->
-<!-- Banner Begin -->
 <div class="banner">
     <div class="container">
         <div class="row">
             <div class="col-lg-6 col-md-6 col-sm-6">
                 <div class="banner__pic">
-                    <img src="img/banner/banner-1.jpg" alt="">
+                    <img src="~/img/banner/banner-1.jpg" alt="">
                 </div>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-6">
                 <div class="banner__pic">
-                    <img src="img/banner/banner-2.jpg" alt="">
+                    <img src="~/img/banner/banner-2.jpg" alt="">
                 </div>
             </div>
         </div>
     </div>
 </div>
-<!-- Banner End -->
-<!-- Latest Product Section Begin -->
 <section class="latest-product spad">
     <div class="container">
         <div class="row">
@@ -70,7 +61,4 @@
         </div>
     </div>
 </section>
-<!-- Latest Product Section End -->
-<!-- Blog Section Begin -->
 <partial name="~/Views/Home/Blog/_FromTheBlog.cshtml"/>
-<!-- Blog Section End -->

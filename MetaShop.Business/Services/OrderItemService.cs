@@ -3,14 +3,8 @@ using MetaShop.Business.Extensions;
 using MetaShop.Business.Interfaces;
 using MetaShop.Common;
 using MetaShop.Common.Dtos;
-using MetaShop.DAL.Entities;
 using MetaShop.DAL.Interfaces;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using OrderItemEntity = MetaShop.DAL.Entities.OrderItem;
 
 namespace MetaShop.Business.Services
@@ -25,6 +19,7 @@ namespace MetaShop.Business.Services
             _baseRepository = baseRepository;
             _mapper = mapper;
         }
+
         public async Task<OrderItemDto> AddAsync(OrderItemDto orderItemDto)
         {
             var orderItem = _mapper.Map<OrderItemEntity>(orderItemDto);
@@ -58,9 +53,7 @@ namespace MetaShop.Business.Services
         public async Task<PagedResponseModel<OrderItemDto>> PagedQueryAsync(string name, int page, int limit)
         {
             var query = _baseRepository.Entities;
-
             query = query.Where(x => string.IsNullOrEmpty(name) || x.Name.Trim().ToLower().Contains(name.Trim().ToLower()));
-
             query = query.OrderBy(x => x.Name);
 
             var orderItems = await query.AsNoTracking().PaginateAsync(page, limit);

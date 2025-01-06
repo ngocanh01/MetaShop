@@ -3,13 +3,7 @@ using MetaShop.Business.Interfaces;
 using MetaShop.Common;
 using MetaShop.Common.Dtos;
 using MetaShop.DAL.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using CartEntity = MetaShop.DAL.Entities.Cart;
-
 
 namespace MetaShop.Business.Services
 {
@@ -23,6 +17,7 @@ namespace MetaShop.Business.Services
             _baseRepository = baseRepository;
             _mapper = mapper;
         }
+
         public async Task<CartDto> AddAsync(CartDto cartDto)
         {
             var attribute = _mapper.Map<CartEntity>(cartDto);

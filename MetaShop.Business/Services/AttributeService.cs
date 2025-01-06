@@ -3,10 +3,8 @@ using MetaShop.Business.Extensions;
 using MetaShop.Business.Interfaces;
 using MetaShop.Common;
 using MetaShop.Common.Dtos;
-using MetaShop.DAL;
 using MetaShop.DAL.Interfaces;
 using Microsoft.EntityFrameworkCore;
-using System.Net;
 using AttributeEntity = MetaShop.DAL.Entities.Attribute;
 
 namespace MetaShop.Business.Services
@@ -16,9 +14,9 @@ namespace MetaShop.Business.Services
         private readonly IBaseRepository<AttributeEntity> _baseRepository;
         private IMapper _mapper;
 
-        public AttributeService(IBaseRepository<AttributeEntity> baseRepository, IMapper mapper) 
-        { 
-            _baseRepository = baseRepository; 
+        public AttributeService(IBaseRepository<AttributeEntity> baseRepository, IMapper mapper)
+        {
+            _baseRepository = baseRepository;
             _mapper = mapper;
         }
 
@@ -55,9 +53,7 @@ namespace MetaShop.Business.Services
         public async Task<PagedResponseModel<AttributeDto>> PagedQueryAsync(string name, int page, int limit)
         {
             var query = _baseRepository.Entities;
-
             query = query.Where(x => string.IsNullOrEmpty(name) || x.Name.Trim().ToLower().Contains(name.Trim().ToLower()));
-
             query = query.OrderBy(x => x.Name);
 
             var attributes = await query.AsNoTracking().PaginateAsync(page, limit);

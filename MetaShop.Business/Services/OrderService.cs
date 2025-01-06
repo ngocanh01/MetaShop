@@ -2,13 +2,7 @@
 using MetaShop.Business.Interfaces;
 using MetaShop.Common;
 using MetaShop.Common.Dtos;
-using MetaShop.DAL.Entities;
 using MetaShop.DAL.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using OrderEntity = MetaShop.DAL.Entities.Order;
 
 namespace MetaShop.Business.Services
@@ -23,6 +17,7 @@ namespace MetaShop.Business.Services
             _baseRepository = baseRepository;
             _mapper = mapper;
         }
+
         public async Task<OrderDto> AddAsync(OrderDto orderDto)
         {
             var order = _mapper.Map<OrderEntity>(orderDto);
