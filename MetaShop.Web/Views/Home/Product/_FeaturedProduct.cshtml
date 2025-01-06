@@ -20,7 +20,9 @@
 
             @foreach (var item in Model)
             {
-                <partial name="~/Views/Home/Product/_FeaturedItem.cshtml" model="@item" />
+                <div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
+                    <partial name="~/Views/Shared/Components/_ProductItem.cshtml" model="@item" />
+                </div>
             }
         </div>
     </div>
